@@ -1,0 +1,54 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+
+namespace HesapMakinasi4
+{
+    public partial class HesapMakinasi4_1 : System.Web.UI.Page
+    {
+        private double sayi1;
+        private double sayi2;
+
+        protected void Page_Load(object sender, EventArgs e)
+        {
+
+        }
+        private void SayilariOku()
+        {
+            sayi1 = Convert.ToDouble(TxtSayi1.Text);
+            sayi2 = Convert.ToDouble(TxtSayi2.Text);
+        }
+
+        protected void BtnCarp_Click(object sender, EventArgs e)
+        {
+            SayilariOku();
+            double sonuc = sayi1 * sayi2;
+            LblSonuc.Text = sonuc.ToString();
+        }
+
+        protected void BtnBol_Click(object sender, EventArgs e)
+        {
+            SayilariOku();
+            double sonuc = sayi1 / sayi2;
+            LblSonuc.Text = sonuc.ToString();
+        }
+
+        protected void BtnTopla_Click(object sender, EventArgs e)
+        {
+            SayilariOku();
+            double sonuc = sayi1 + sayi2;
+            LblSonuc.Text = sonuc.ToString();
+        }
+
+        protected void BtnCikar_Click(object sender, EventArgs e)
+        {
+            SayilariOku();
+            double sonuc = sayi1 - sayi2;
+            LblSonuc.Text = sonuc.ToString();/* Text özelliği sadece string türü değerleri kabul ettiği için sonuc
+            değişkeninin değeri ToString() ile string’e dönüştürülmüştür*/
+        }
+    }
+}
